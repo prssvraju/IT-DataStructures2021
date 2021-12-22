@@ -1,4 +1,5 @@
 /*
+ref ::  https://www.youtube.com/watch?v=lYIpEBNTJKY
 Result terms will sum of on like terms 
 The polynomial 1 is..(4x^3)+(3x^2)+1
 The polynomial 2 is..(5x^3)+(7x^1)+5
