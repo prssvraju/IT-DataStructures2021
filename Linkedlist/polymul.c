@@ -17,6 +17,8 @@ struct node
 typedef struct node * nodeptr;
 nodeptr insertpoly(nodeptr,int,int);
 void display(nodeptr);
+void displayst(nodeptr);
+
 nodeptr polyMul(nodeptr,nodeptr);
 void main()
 {
@@ -53,11 +55,11 @@ void main()
     //Displaying the polynomial..
 
     printf("\nThe polynomial 1 is..");
-    display(p1head);
+    displayst(p1head);
     printf("\nThe polynomial 2 is..");
-    display(p2head);
+    displayst(p2head);
     printf("\nThe Mul of the two polynomials is..");
-    display(p3head);
+    displayst(p3head);
 }
 
 struct node* insertpoly(struct node* thead,int c,int e)
@@ -130,4 +132,34 @@ nodeptr polyMul(nodeptr head1,nodeptr head2)
         ptr2 =head2;
     } 
     return head3;
+}
+
+void displayst(nodeptr head)
+{
+    nodeptr temp;
+    temp = head;
+    if(head==NULL)
+    {
+        printf("List is empty");
+    }
+    else
+    {
+        while(temp->next!= NULL)
+        {
+            printf("%dx^%d",temp->coef,temp->expo);
+            temp=temp->next;
+            if(temp->next!=NULL)
+            {
+                printf("+");
+            }
+        }
+        if(temp->expo == 0)
+        {
+            printf("+%d",temp->coef);
+        }
+        else
+        {
+            printf("+%dx^%d",temp->coef,temp->expo);
+        }
+    }
 }
