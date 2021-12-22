@@ -98,8 +98,8 @@ void display(struct node* thead)
                 printf("\n");
             }
         }
-       //printf(" %dx^%d ",temp->coef,temp->expo);
-       printf("%d",temp->coef);
+       printf(" %dx^%d ",temp->coef,temp->expo);
+       //printf("%d",temp->coef);
     }
 }
 nodeptr polyAdd(nodeptr head1,nodeptr head2)

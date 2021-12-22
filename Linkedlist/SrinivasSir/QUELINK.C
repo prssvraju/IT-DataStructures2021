@@ -107,4 +107,4 @@ int empty(struct queue *qu)
 		return 1;
 	else
 		return 0;
-}
+}

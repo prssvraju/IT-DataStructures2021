@@ -60,9 +60,9 @@ void display(struct node* thead)
     }
     else{
         while(temp->next!=NULL){
-        //while(temp!=NULL){
-            // printf(" %dx^%d +",temp->coef,temp->expo);
-            // temp=temp->next;
+        // while(temp!=NULL){
+        //     printf(" %dx^%d +",temp->coef,temp->expo);
+        //     temp=temp->next;
             printf("(%dx^%d)",temp->coef,temp->expo);
             temp=temp->next;
             if(temp!=NULL)
@@ -75,6 +75,6 @@ void display(struct node* thead)
             }
         }
        //printf(" %dx^%d ",temp->coef,temp->expo);
-       printf("%d",temp->coef);
+        printf("%d",temp->coef);
     }
 }
