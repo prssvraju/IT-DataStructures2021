@@ -1,10 +1,8 @@
 /*
-Result will have individual like terms
-
+Result terms will sum of on like terms 
 The polynomial 1 is..(4x^3)+(3x^2)+1
 The polynomial 2 is..(5x^3)+(7x^1)+5
-The Mul of the two polynomials is..(20x^6)+(15x^5)+(28x^4)+(5x^3)+(21x^3)+(20x^3)+(15x^2)+(7x^1)+5
-
+The sum of the two polynomials is..(20x^6)+(15x^5)+(28x^4)+(46x^3)+(15x^2)+(7x^1)+5
 */
 #include<stdio.h>
 #include<stdlib.h>
@@ -18,6 +16,8 @@ typedef struct node * nodeptr;
 nodeptr insertpoly(nodeptr,int,int);
 void display(nodeptr);
 nodeptr polyMul(nodeptr,nodeptr);
+nodeptr polyAdd(nodeptr,nodeptr);
+
 void main()
 {
     int a,b,n,i;
@@ -56,7 +56,7 @@ void main()
     display(p1head);
     printf("\nThe polynomial 2 is..");
     display(p2head);
-    printf("\nThe Mul of the two polynomials is..");
+    printf("\nThe sum of the two polynomials is..");
     display(p3head);
 }
 
@@ -114,20 +114,60 @@ nodeptr polyMul(nodeptr head1,nodeptr head2)
 {
     nodeptr ptr1=head1;
     nodeptr ptr2=head2;
-    nodeptr head3 = NULL;
+    nodeptr prod = NULL;
+    nodeptr sop = NULL;
     if(head1 == NULL || head2 == NULL)
     {
         printf("Zero Polynomial\n");
     }
     while(ptr1!=NULL)
     {
+        ptr2 =head2;
         while (ptr2!=NULL)
         {
-            head3 = insertpoly(head3,ptr1->coef*ptr2->coef,ptr1->expo+ptr2->expo);
+            prod = insertpoly(prod,ptr1->coef*ptr2->coef,ptr1->expo+ptr2->expo);
             ptr2= ptr2->next;
         }
+        sop = polyAdd(sop,prod);
+        prod = NULL;
         ptr1 = ptr1->next;
-        ptr2 =head2;
     } 
+    return sop;
+}
+
+nodeptr polyAdd(nodeptr head1,nodeptr head2)
+{
+    nodeptr ptr1=head1;
+    nodeptr ptr2=head2;
+    nodeptr head3 = NULL;
+    while(ptr1!=NULL && ptr2!=NULL)
+    {
+        if(ptr1->expo == ptr2->expo)
+        {
+            head3 = insertpoly(head3,ptr1->coef+ptr2->coef,ptr1->expo);
+            ptr1= ptr1->next;
+            ptr2= ptr2->next;
+        }
+        else if(ptr1->expo > ptr2->expo)
+        {
+            head3 = insertpoly(head3,ptr1->coef,ptr1->expo);
+            ptr1=ptr1->next;
+        }
+        else if(ptr1->expo < ptr2->expo)
+        {
+            head3 = insertpoly(head3,ptr2->coef,ptr2->expo);
+            ptr2=ptr2->next;
+        }
+    }
+    while(ptr1!=NULL)
+    {
+        head3 = insertpoly(head3,ptr1->coef,ptr1->expo);
+        ptr1=ptr1->next;
+    }
+    while(ptr2!=NULL)
+    {
+        head3 = insertpoly(head3,ptr2->coef,ptr2->expo);
+        ptr2=ptr2->next;
+    }
     return head3;
 }
