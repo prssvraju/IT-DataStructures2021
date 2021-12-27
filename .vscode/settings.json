@@ -8,7 +8,10 @@
         "STACKLIN.C": "cpp",
         "QUELINK.C": "cpp",
         "tempCodeRunnerFile.C": "cpp",
-        "CIRLIN_1.C": "cpp"
+        "CIRLIN_1.C": "cpp",
+        "DELLINK.C": "cpp",
+        "SEARLINK.C": "cpp",
+        "stdlib.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

@@ -64,18 +64,18 @@ nodeptr getnode()
 }
 void insert(struct queue *qu,int a)
 {
-	nodeptr p;
-	p=getnode();
-	p->info=a;
+	nodeptr newnode;
+	newnode=getnode();
+	newnode->info=a;
 	if(qu->front==NULL)
 	{
-	  qu->rear=p;
-	  qu->front=qu->rear;
+	  qu->rear=newnode;
+	  qu->front=newnode;
 	}
 	else
 	{
-		qu->rear->next=p;
-		qu->rear=p;
+		qu->rear->next=newnode;
+		qu->rear=newnode;
 	}
  }
 int del(struct queue *qu)

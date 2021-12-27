@@ -1,4 +1,7 @@
- if(head1 == NULL || head2 == NULL)
-    {
-        printf("Zero Polynomial\n");
-    }
+
+
+	if(firstnode==NULL)
+	{
+		printf("\nlist is empty");
+		return firstnode;
+	}
