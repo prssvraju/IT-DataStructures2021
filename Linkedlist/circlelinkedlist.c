@@ -244,7 +244,7 @@ nodeptr deleteBeforElement(nodeptr firstnode)
             temp2 = temp1;
             temp1 = temp1->next;
         }
-        temp2->next = temp2->next;
+        temp2->next = temp1->next;
         temp1->next = NULL;
     }
     return firstnode;
