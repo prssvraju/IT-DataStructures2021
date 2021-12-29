@@ -15,14 +15,13 @@ main()
 	nodeptr first;
 	first=create();
 	traversal(first);
-	getch();
 }
 nodeptr getnode()
 {
 	nodeptr p;
 	p=(nodeptr)malloc(sizeof(struct node));
 	p->info=0;
-	p->next=0;
+	p->next=NULL;
 	return p;
 }
 void traversal(nodeptr p)
@@ -40,20 +39,20 @@ void traversal(nodeptr p)
 nodeptr create()
 {
 
-       nodeptr p,p1,p2;
-       p1=getnode();
-       p=p1;
-       p2=getnode();
+       nodeptr head,firstnode,newnode;
+       firstnode=getnode();
+       head=firstnode;
+       newnode=getnode();
        printf("\nEnter the at end -999\n");
        printf("\nEnter the number:");
-       scanf("%d",&p2->info);
-       while(p2->info!=-999)
+       scanf("%d",&newnode->info);
+       while(newnode->info!=-999)
        {
-		p1->next=p2;
-		p1=p2;
-		p2=getnode();
+		firstnode->next=newnode;
+		firstnode=newnode;
+		newnode=getnode();
 		printf("\nEnter the number:");
-		scanf("%d",&p2->info);
+		scanf("%d",&newnode->info);
        }
-	return p->next;
+	return head->next;
 }

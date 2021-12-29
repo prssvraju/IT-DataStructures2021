@@ -112,6 +112,7 @@ void insertend(nodeptr newnode)
 void insertbefore(nodeptr newnode)
 {
 	nodeptr temp1,temp2;
+	temp1= first;
 	int k;
 	printf("\nEnter the element insert before:");
 	scanf("%d",&k);
@@ -123,7 +124,6 @@ void insertbefore(nodeptr newnode)
 	}
 	else
 	{
-		temp1=first;
 		while(temp1->next->info!=k)
         {
             temp1=temp1->next;
@@ -165,7 +165,7 @@ void insertafter(nodeptr newnode)
 void create()
 {
 
-       nodeptr head,firstnode,newnode,p3;
+       nodeptr head,firstnode,newnode,temp;
        firstnode=getnode();
        head=firstnode;
        newnode=getnode();
@@ -181,9 +181,9 @@ void create()
 		printf("\nEnter the number:");
 		scanf("%d",&newnode->info);
        }
-	p3=head->next;
+	temp=head->next;
 	head->next=NULL;
-	p3->prev=NULL;
-	first=p3;
+	temp->prev=NULL;
+	first=temp;
 	last=firstnode;
 }

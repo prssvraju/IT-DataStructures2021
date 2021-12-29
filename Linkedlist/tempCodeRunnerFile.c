@@ -1,7 +1,2 @@
-
-
-	if(firstnode==NULL)
-	{
-		printf("\nlist is empty");
-		return firstnode;
-	}
+head->next=NULL;
+	temp
