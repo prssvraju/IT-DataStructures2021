@@ -11,7 +11,10 @@
         "CIRLIN_1.C": "cpp",
         "DELLINK.C": "cpp",
         "SEARLINK.C": "cpp",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "DELDLINK.C": "cpp",
+        "INSCLINK.C": "cpp",
+        "INSLINK.C": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
