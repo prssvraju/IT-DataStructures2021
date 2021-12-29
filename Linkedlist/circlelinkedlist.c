@@ -69,6 +69,7 @@ nodeptr insertAtBeg(nodeptr firtnode,nodeptr newnode)
     {
         temp=temp->next;
     }
+
     newnode->next = firtnode;
     temp->next = newnode;
     firtnode = newnode;				
@@ -87,6 +88,7 @@ nodeptr insertAtEnd(nodeptr firtnode,nodeptr newnode)
     }
     newnode->next = firtnode;
     temp->next = newnode;
+
 	return firtnode;
 }
 
@@ -128,6 +130,7 @@ nodeptr insertAfterElement(nodeptr firstnode,nodeptr newnode)
 
     printf("\nEnter the element insetr after:");
     scanf("%d",&k);
+
     while(temp->data!=k)
     {
         temp=temp->next;
@@ -188,6 +191,7 @@ nodeptr deleteAtBeg(nodeptr firstnode)
         {
             temp1=temp1->next;
         }
+        
         temp2=firstnode->next;
         temp1->next=temp2;
         firstnode->next=NULL;
@@ -221,6 +225,8 @@ nodeptr deleteBeforElement(nodeptr firstnode)
 
     printf("\nenter the element delete before:");
     scanf("%d", &k);
+
+    
     if (temp1->data == k)
     {
          printf("\nDeletion is not possible");
@@ -244,7 +250,7 @@ nodeptr deleteBeforElement(nodeptr firstnode)
             temp2 = temp1;
             temp1 = temp1->next;
         }
-        temp2->next = temp2->next;
+        temp2->next = temp1->next;
         temp1->next = NULL;
     }
     return firstnode;
