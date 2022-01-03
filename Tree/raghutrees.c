@@ -13,24 +13,24 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-typedef struct BST {
+struct node {
    int data;
-   struct BST *lchild, *rchild;
-} node;
-
-void insert(node *, node *);
-void inorder(node *);
-void preorder(node *);
-void postorder(node *);
-node *search(node *, int, node **);
+   struct node *lchild, *rchild;
+};
+typedef struct node *nodeptr;
+void insert(nodeptr, nodeptr);
+void inorder(nodeptr);
+void preorder(nodeptr);
+void postorder(nodeptr);
+nodeptr search(nodeptr, int, struct node **);
 
 void main() {
    int choice;
    char ans = 'N';
    int ch;
    int key;
-   node *new_node, *root, *tmp, *parent;
-   node *get_node();
+   nodeptr new_node,root,tmp,parent;
+   nodeptr get_node();
    root = NULL;
 
    printf("\nProgram For Binary Search Tree ");
@@ -85,15 +85,15 @@ void main() {
    } while (choice != 4);
 }
 /* Get new Node */
-node *get_node() {
-   node *temp;
-   temp = (node *) malloc(sizeof(node));
+nodeptr get_node() {
+   nodeptr temp;
+   temp = (nodeptr) malloc(sizeof(struct node));
    temp->lchild = NULL;
    temp->rchild = NULL;
    return temp;
 }
 /* This function is for creating a binary search tree */
-void insert(node *root, node *new_node) {
+void insert(nodeptr root, nodeptr new_node) {
    if (new_node->data < root->data) {
       if (root->lchild == NULL)
          root->lchild = new_node;
@@ -109,8 +109,8 @@ void insert(node *root, node *new_node) {
    }
 }
 /* This function is for searching the node from binary Search Tree */
-node *search(node *root, int key, node **parent) {
-   node *temp;
+nodeptr search(nodeptr root, int key, struct node **parent) {
+   nodeptr temp;
    temp = root;
    while (temp != NULL) {
       if (temp->data == key) {
@@ -128,26 +128,26 @@ node *search(node *root, int key, node **parent) {
    return NULL;
 }
 /* This function displays the tree in inorder fashion */
-void inorder(node *temp) {
+void inorder(nodeptr temp) {
    if (temp != NULL) {
       inorder(temp->lchild);
-      printf("%d", temp->data);
+      printf("%d --> ", temp->data);
       inorder(temp->rchild);
    }
 }
 /* This function displays the tree in preorder fashion */
-void preorder(node *temp) {
+void preorder(nodeptr temp) {
    if (temp != NULL) {
-      printf("%d", temp->data);
+      printf("%d --> ", temp->data);
       preorder(temp->lchild);
       preorder(temp->rchild);
    }
 }
  /* This function displays the tree in postorder fashion */
-void postorder(node *temp) {
+void postorder(nodeptr temp) {
    if (temp != NULL) {
       postorder(temp->lchild);
       postorder(temp->rchild);
-      printf("%d", temp->data);
+      printf("%d --> ", temp->data);
    }
 }
