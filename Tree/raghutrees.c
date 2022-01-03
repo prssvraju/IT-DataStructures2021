@@ -150,4 +150,4 @@ void postorder(nodeptr temp) {
       postorder(temp->rchild);
       printf("%d --> ", temp->data);
    }
-}
+}1
