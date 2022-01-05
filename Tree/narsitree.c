@@ -7,9 +7,9 @@ struct node
 };
 typedef struct node *nodeptr;
 nodeptr insert(nodeptr, int key);
-void inorder();
-void preorder();
-void postorder();
+void inorder(nodeptr);
+void preorder(nodeptr);
+void postorder(nodeptr);
 nodeptr find_minimum();
 main()
 {
