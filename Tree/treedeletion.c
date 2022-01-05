@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 struct node
 {
 	int info;
@@ -22,7 +23,6 @@ main()
 {
 nodeptr tree;
 	int a,ch;
-	clrscr();
 	tree=NULL;
 	tree=create(tree);
 	while(1)
@@ -125,8 +125,8 @@ void postorder(nodeptr p)
 }
 void del(nodeptr p, int a)
 {
-	nodeptr p1;
-	p1=p;
+	nodeptr parent;
+	parent=p;
 	if(p==NULL)
 		printf("\nElement not found in the BST");
 	else
@@ -135,61 +135,61 @@ void del(nodeptr p, int a)
 		{
 			if(a<p->info)
 			{
-				p1=p;
+				parent=p;
 				p=p->left;
 			}
 			else if (a>p->info)
 			{
-				p1=p;
+				parent=p;
 				p=p->right;
 			}
 		}
 		if(p==NULL)
 			printf("\nElement not found in BST");
 		else if(a==p->info)
-			del1(p1,p);
+			del1(parent,p);
 	}
 
 }
-void del1(nodeptr p1, nodeptr p)
+void del1(nodeptr parent, nodeptr p)
 {
 	if((p->left==NULL)&&(p->right==NULL))
-		nochild(p1,p);
+		nochild(parent,p);
 	else if((p->left==NULL)&&(p->right!=NULL))
-		rightchild(p1,p);
+		rightchild(parent,p);
 	else if ((p->left!=NULL)&&(p->right==NULL))
-		leftchild(p1,p);
+		leftchild(parent,p);
 	else if((p->left!=NULL)&&(p->right!=NULL))
-		twochilds(p1,p);
+		twochilds(parent,p);
 }
-void nochild(nodeptr p1, nodeptr p)
+void nochild(nodeptr parent, nodeptr p)
 {
-	if(p1->left==p)
-		p1->left=NULL;
+	if(parent->left==p)
+		parent->left=NULL;
 	else
-		p1->right=NULL;
+		parent->right=NULL;
 	free(p);
 }
-void leftchild(nodeptr p1, nodeptr p)
+void leftchild(nodeptr parent, nodeptr p)
 {
-	if(p1->left==p)
-		p1->left=p->left;
+	if(parent->left==p)
+		parent->left=p->left;
 	else
-		p1->right=p->left;
+		parent->right=p->left;
 	p->left=NULL;
 	free(p);
 
 }
-void rightchild(nodeptr p1, nodeptr p)
+void rightchild(nodeptr parent, nodeptr p)
 {
-	if(p1->left==p)
-		p1->left=p->right;
+	if(parent->left==p)
+		parent->left=p->right;
 	else
-		p1->right=p->right;
+		parent->right=p->right;
 	p->right=NULL;
 	free(p);
 }
-void twochilds(nodeptr p1, nodeptr p)
+void twochilds(nodeptr parent, nodeptr p)
 {
 	int k;
 	nodeptr temp;
@@ -197,7 +197,7 @@ void twochilds(nodeptr p1, nodeptr p)
 	k=p->info;
 	p->info=temp->info;
 	temp->info=k;
-	del(p1->right, temp->info);
+	del(parent->right, temp->info);
 }
 nodeptr findmin(nodeptr p)
 {
