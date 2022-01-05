@@ -51,7 +51,7 @@ struct node *insert(struct node *root, int key)
       root=(struct node*) malloc (sizeof(struct node));
       root->left=root->right=NULL;
       root->info=key;
-      //1printf("%d",root);
+      //printf("%d",root);
       return root;
    }
   else
