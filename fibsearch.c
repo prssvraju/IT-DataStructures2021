@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 int get_fibonacci(int);
 
 int fibonacci_Search(int A[], int n, int key)
@@ -88,5 +87,4 @@ void main()
     {
         printf("Element is found at %d",res);
     }
-    getch();
 }
