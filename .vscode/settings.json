@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "C_Cpp_Runner.cCompilerPath": "/usr/bin/clang",
   "C_Cpp_Runner.cppCompilerPath": "/usr/bin/clang++",
   "C_Cpp_Runner.debuggerPath": "/usr/bin/lldb",
@@ -16,4 +17,24 @@
   "C_Cpp_Runner.excludeSearch": [],
   "C_Cpp_Runner.enableWarnings": true,
   "C_Cpp_Runner.warningsAsError": false
+=======
+    "files.associations": {
+        "conio.h": "c",
+        "POSTFIXE.C": "cpp",
+        "INPOST.C": "cpp",
+        "LINKOP.C": "cpp",
+        "linkedListwithfun.C": "cpp",
+        "STACKLIN.C": "cpp",
+        "QUELINK.C": "cpp",
+        "tempCodeRunnerFile.C": "cpp",
+        "CIRLIN_1.C": "cpp",
+        "DELLINK.C": "cpp",
+        "SEARLINK.C": "cpp",
+        "stdlib.h": "c",
+        "DELDLINK.C": "cpp",
+        "INSCLINK.C": "cpp",
+        "INSLINK.C": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+>>>>>>> 0b5b81d9032ca1c0fc7e35fc72f29a70eab4790e
 }

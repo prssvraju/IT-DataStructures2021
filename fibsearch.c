@@ -46,8 +46,9 @@ int fibonacci_Search(int A[], int n, int key)
 
 int get_fibonacci(int n)
 {
-	int fibk2= 0;
-  	int fibk1= 1;
+
+	int fibk1= 0;
+  	int fibk2= 1;
   	int fibk= 0;
     if ( n == 0 || n == 1) 
 	{
@@ -56,10 +57,10 @@ int get_fibonacci(int n)
     while(fibk<n)
     { 
                fibk = fibk2 + fibk1;
-               fibk2 = fibk1;
-               fibk1 = fibk;
+               fibk1 = fibk2;
+               fibk2 = fibk;
     }
-     return fibk2;
+     return fibk1;
 }
 
 void main()
@@ -87,4 +88,9 @@ void main()
     {
         printf("Element is found at %d",res);
     }
+<<<<<<< HEAD
+=======
+    //printf("%d",get_fibonacci(10));
+    getch();
+>>>>>>> 0b5b81d9032ca1c0fc7e35fc72f29a70eab4790e
 }
