@@ -1,4 +1,24 @@
 {
+<<<<<<< HEAD
+  "configurations": [
+    {
+      "name": "macos-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "compilerPath": "/usr/bin/clang",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "macos-gcc-x64",
+      "compilerArgs": [
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic"
+      ]
+    }
+  ],
+  "version": 4
+=======
     "configurations": [
         {
             "name": "Mac",
@@ -14,4 +34,5 @@
         }
     ],
     "version": 4
+>>>>>>> 0b5b81d9032ca1c0fc7e35fc72f29a70eab4790e
 }

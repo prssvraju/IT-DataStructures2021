@@ -147,12 +147,21 @@ void del(nodeptr p, int a)
 		if(p==NULL)
 			printf("\nElement not found in BST");
 		else if(a==p->info)
+			
+			printf("\nInside Del");
+			printf("\nParent Node Content %d",parent40->info);
+			printf("\nNode Content %d",p->info);
+			printf("\nSearch Key %d",a);
 			del1(parent,p);
 	}
 
 }
 void del1(nodeptr parent, nodeptr p)
 {
+	printf("\nInside Del1");
+	printf("\nParent Node Content %d",parent->info);
+	printf("\nNode  content %d",p->info);
+
 	if((p->left==NULL)&&(p->right==NULL))
 		nochild(parent,p);
 	else if((p->left==NULL)&&(p->right!=NULL))
@@ -194,6 +203,7 @@ void twochilds(nodeptr parent, nodeptr p)
 	int k;
 	nodeptr temp;
 	temp=findmin(p->right);
+	printf("Minium in right Sub Tree %d",temp->info);
 	k=p->info;
 	p->info=temp->info;
 	temp->info=k;
