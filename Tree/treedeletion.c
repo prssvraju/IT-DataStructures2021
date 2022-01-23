@@ -18,7 +18,7 @@ void rightchild(nodeptr, nodeptr);
 void nochild(nodeptr, nodeptr);
 void leftchild(nodeptr, nodeptr);
 void twochilds(nodeptr, nodeptr);
-nodeptr findmin(nodeptr);
+nodeptr findMaxOfRight(nodeptr);
 main()
 {
 nodeptr tree;
@@ -193,8 +193,8 @@ void twochilds(nodeptr parent, nodeptr p)
 {
 	int k;
 	nodeptr temp;
-	temp=findmin(p->right);
-	printf("Minium in right Sub Tree %d",temp->info);
+	temp=findMaxOfRight(p->right);
+	printf("Maxium in right Sub Tree %d",temp->info);
 	k=p->info;
 	p->info=temp->info;
 	temp->info=k;
@@ -205,10 +205,10 @@ void twochilds(nodeptr parent, nodeptr p)
 
 	//del(parent->right, temp->info);
 }
-nodeptr findmin(nodeptr p)
+nodeptr findMaxOfRight(nodeptr p)
 {
-	while(p->left!=NULL)
-		p=p->left;
+	while(p->right!=NULL)
+		p=p->right;
 	return p;
 }
 
