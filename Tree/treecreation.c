@@ -48,7 +48,7 @@ nodeptr create(nodeptr firstnode)
 			firstnode = newnode;
 		else
 		{
-			printf("\nvisiting order:");
+			//printf("\nvisiting order:");
 			insert(firstnode, newnode);
 			newnode = getnode();
 			printf("\nenter the number:");
