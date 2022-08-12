@@ -1,7 +1,7 @@
 #include <stdio.h>
 void quicksort(int[],int,int);
 int partition(int[],int,int);
-void main(void) 
+int main(void) 
 {
 	int a[100],i,j,temp,n;
 	printf("enter the value of n");

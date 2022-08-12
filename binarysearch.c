@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<conio.h>
+//#include<conio.h>
 
 int binarysearch(int arr[],int si,int ei,int k)
 {
@@ -27,8 +27,7 @@ int binarysearch(int arr[],int si,int ei,int k)
     }
     return -1;
 }
-void main()
-{
+int main(void) {
     int n,i;
     int arr[10];
     int k;
@@ -49,7 +48,7 @@ void main()
     }
     else
     {
-        printf("Element is found at %d",res);
+        printf("Element is found at %d\n",res);
     }
-    getch();
+    //getch();
 }
