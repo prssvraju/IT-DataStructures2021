@@ -4,11 +4,11 @@ int isearch(int arr[],int si,int ei,int k)
     int mid;
     while (si<=ei) {
         mid = si + (ei - si)*((k-arr[si])/(arr[ei]-arr[si]));
-        if (k == arr[mid])
+        if (arr[mid] == k)
         {
-            return mid + 1;
+            return mid;
         }
-        if (k < arr[mid])
+        if (arr[mid] > k)
         {
             ei = mid - 1;
         }
@@ -20,7 +20,7 @@ int isearch(int arr[],int si,int ei,int k)
     return -1;
 }
 
-void main()
+int main()
 {
     int n,i;
     int arr[10];
@@ -42,7 +42,7 @@ void main()
     }
     else
     {
-        printf("Element is found at %d",res);
+        printf("Element is found at %d\n",res+1);
     }
-    getch();
+    return 0;
 }
